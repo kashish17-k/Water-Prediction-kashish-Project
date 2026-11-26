@@ -1,0 +1,69 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.functions.SMOreg -C 1.0 -N 0 -I "weka.classifiers.functions.supportVector.RegSMOImproved -T 0.001 -V -P 1.0E-12 -L 0.001 -W 1" -K "weka.classifiers.functions.supportVector.PolyKernel -E 1.0 -C 250007"
+Relation:     water_requirement_prediction-weka.filters.unsupervised.attribute.Remove-R1
+Instances:    1200
+Attributes:   13
+              Crop_Type
+              Growth_Stage
+              Temperature_C
+              Humidity_pct
+              Rainfall_mm_day
+              Wind_Speed_m_s
+              Soil_Type
+              Soil_Moisture_pct
+              Soil_pH
+              Nitrogen_mg_kg
+              Phosphorus_mg_kg
+              Potassium_mg_kg
+              Water_Requirement_mm_day
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+SMOreg
+
+weights (not support vectors):
+ -       0.0012 * (normalized) Crop_Type=Cotton
+ +       0.008  * (normalized) Crop_Type=Maize
+ -       0.1056 * (normalized) Crop_Type=Millet
+ -       0.0263 * (normalized) Crop_Type=Potato
+ +       0.093  * (normalized) Crop_Type=Rice
+ +       0.0653 * (normalized) Crop_Type=Sugarcane
+ +       0.0172 * (normalized) Crop_Type=Tomato
+ -       0.0504 * (normalized) Crop_Type=Wheat
+ +       0.0088 * (normalized) Growth_Stage=Development
+ -       0.1128 * (normalized) Growth_Stage=Initial
+ -       0.0127 * (normalized) Growth_Stage=Late-season
+ +       0.1167 * (normalized) Growth_Stage=Mid-season
+ +       0.4658 * (normalized) Temperature_C
+ -       0.0925 * (normalized) Humidity_pct
+ -       0.5644 * (normalized) Rainfall_mm_day
+ +       0.1274 * (normalized) Wind_Speed_m_s
+ -       0.0498 * (normalized) Soil_Type=Clay
+ -       0.0115 * (normalized) Soil_Type=Loamy
+ +       0.0776 * (normalized) Soil_Type=Sandy
+ -       0.0163 * (normalized) Soil_Type=Silty
+ -       0.2151 * (normalized) Soil_Moisture_pct
+ -       0.0192 * (normalized) Soil_pH
+ +       0.0263 * (normalized) Nitrogen_mg_kg
+ -       0.0404 * (normalized) Phosphorus_mg_kg
+ -       0.0171 * (normalized) Potassium_mg_kg
+ +       0.2313
+
+
+
+Number of kernel evaluations: 720600 (98.036% cached)
+
+Time taken to build model: 1.42 seconds
+
+=== Cross-validation ===
+=== Summary ===
+
+Correlation coefficient                  0.8784
+Mean absolute error                      0.1202
+Root mean squared error                  0.1582
+Relative absolute error                 45.9773 %
+Root relative squared error             48.0145 %
+Total Number of Instances             1200     
+

@@ -1,0 +1,292 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.M5P -M 4.0 -num-decimal-places 4
+Relation:     water_requirement_prediction-weka.filters.unsupervised.attribute.Remove-R1
+Instances:    1200
+Attributes:   13
+              Crop_Type
+              Growth_Stage
+              Temperature_C
+              Humidity_pct
+              Rainfall_mm_day
+              Wind_Speed_m_s
+              Soil_Type
+              Soil_Moisture_pct
+              Soil_pH
+              Nitrogen_mg_kg
+              Phosphorus_mg_kg
+              Potassium_mg_kg
+              Water_Requirement_mm_day
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+M5 pruned model tree:
+(using smoothed linear models)
+
+Temperature_C <= 29.75 : 
+|   Rainfall_mm_day <= 2.55 : LM1 (307/36.549%)
+|   Rainfall_mm_day >  2.55 : 
+|   |   Growth_Stage=Late-season,Development,Mid-season <= 0.5 : 
+|   |   |   Rainfall_mm_day <= 3.45 : LM2 (26/34.3%)
+|   |   |   Rainfall_mm_day >  3.45 : LM3 (60/24.157%)
+|   |   Growth_Stage=Late-season,Development,Mid-season >  0.5 : 
+|   |   |   Soil_Type=Sandy <= 0.5 : 
+|   |   |   |   Rainfall_mm_day <= 5.95 : 
+|   |   |   |   |   Temperature_C <= 26.35 : LM4 (77/32.521%)
+|   |   |   |   |   Temperature_C >  26.35 : LM5 (62/31.428%)
+|   |   |   |   Rainfall_mm_day >  5.95 : 
+|   |   |   |   |   Phosphorus_mg_kg <= 22.35 : LM6 (13/25.407%)
+|   |   |   |   |   Phosphorus_mg_kg >  22.35 : LM7 (38/19.698%)
+|   |   |   Soil_Type=Sandy >  0.5 : LM8 (66/32.709%)
+Temperature_C >  29.75 : 
+|   Growth_Stage=Development,Mid-season <= 0.5 : LM9 (274/42.817%)
+|   Growth_Stage=Development,Mid-season >  0.5 : LM10 (277/37.853%)
+
+LM num: 1
+Water_Requirement_mm_day = 
+	0.0642 * Crop_Type=Wheat,Potato,Cotton,Tomato,Maize,Sugarcane,Rice 
+	+ 0.0683 * Crop_Type=Potato,Cotton,Tomato,Maize,Sugarcane,Rice 
+	+ 0.0025 * Crop_Type=Cotton,Tomato,Maize,Sugarcane,Rice 
+	+ 0.0377 * Crop_Type=Tomato,Maize,Sugarcane,Rice 
+	- 0.0006 * Crop_Type=Maize,Sugarcane,Rice 
+	+ 0.1367 * Crop_Type=Sugarcane,Rice 
+	+ 0.001 * Crop_Type=Rice 
+	+ 0.1597 * Growth_Stage=Late-season,Development,Mid-season 
+	+ 0.0363 * Growth_Stage=Development,Mid-season 
+	+ 0.1593 * Growth_Stage=Mid-season 
+	+ 0.0301 * Temperature_C 
+	- 0.0021 * Humidity_pct 
+	- 0.0717 * Rainfall_mm_day 
+	+ 0.0282 * Wind_Speed_m_s 
+	+ 0.0007 * Soil_Type=Silty,Loamy,Sandy 
+	+ 0.0307 * Soil_Type=Loamy,Sandy 
+	+ 0.1428 * Soil_Type=Sandy 
+	- 0.0066 * Soil_Moisture_pct 
+	- 0.0001 * Phosphorus_mg_kg 
+	- 0.2423
+
+LM num: 2
+Water_Requirement_mm_day = 
+	0.0016 * Crop_Type=Wheat,Potato,Cotton,Tomato,Maize,Sugarcane,Rice 
+	+ 0.003 * Crop_Type=Potato,Cotton,Tomato,Maize,Sugarcane,Rice 
+	+ 0.0097 * Crop_Type=Cotton,Tomato,Maize,Sugarcane,Rice 
+	+ 0.001 * Crop_Type=Tomato,Maize,Sugarcane,Rice 
+	- 0.0006 * Crop_Type=Maize,Sugarcane,Rice 
+	+ 0.0437 * Crop_Type=Sugarcane,Rice 
+	+ 0.001 * Crop_Type=Rice 
+	+ 0.0289 * Growth_Stage=Late-season,Development,Mid-season 
+	+ 0.0009 * Growth_Stage=Development,Mid-season 
+	+ 0.029 * Growth_Stage=Mid-season 
+	+ 0.0073 * Temperature_C 
+	- 0.0003 * Humidity_pct 
+	- 0.0125 * Rainfall_mm_day 
+	+ 0.0121 * Wind_Speed_m_s 
+	+ 0.0007 * Soil_Type=Silty,Loamy,Sandy 
+	+ 0.0094 * Soil_Type=Loamy,Sandy 
+	+ 0.02 * Soil_Type=Sandy 
+	- 0.0072 * Soil_Moisture_pct 
+	- 0.0003 * Phosphorus_mg_kg 
+	+ 0.346
+
+LM num: 3
+Water_Requirement_mm_day = 
+	0.0016 * Crop_Type=Wheat,Potato,Cotton,Tomato,Maize,Sugarcane,Rice 
+	+ 0.003 * Crop_Type=Potato,Cotton,Tomato,Maize,Sugarcane,Rice 
+	+ 0.0097 * Crop_Type=Cotton,Tomato,Maize,Sugarcane,Rice 
+	+ 0.001 * Crop_Type=Tomato,Maize,Sugarcane,Rice 
+	- 0.0006 * Crop_Type=Maize,Sugarcane,Rice 
+	+ 0.0337 * Crop_Type=Sugarcane,Rice 
+	+ 0.001 * Crop_Type=Rice 
+	+ 0.0289 * Growth_Stage=Late-season,Development,Mid-season 
+	+ 0.0009 * Growth_Stage=Development,Mid-season 
+	+ 0.029 * Growth_Stage=Mid-season 
+	+ 0.0126 * Temperature_C 
+	- 0.0003 * Humidity_pct 
+	- 0.0172 * Rainfall_mm_day 
+	+ 0.0095 * Wind_Speed_m_s 
+	+ 0.0007 * Soil_Type=Silty,Loamy,Sandy 
+	+ 0.0094 * Soil_Type=Loamy,Sandy 
+	+ 0.02 * Soil_Type=Sandy 
+	- 0.0033 * Soil_Moisture_pct 
+	- 0.0003 * Phosphorus_mg_kg 
+	+ 0.0451
+
+LM num: 4
+Water_Requirement_mm_day = 
+	0.0016 * Crop_Type=Wheat,Potato,Cotton,Tomato,Maize,Sugarcane,Rice 
+	+ 0.0133 * Crop_Type=Potato,Cotton,Tomato,Maize,Sugarcane,Rice 
+	+ 0.089 * Crop_Type=Cotton,Tomato,Maize,Sugarcane,Rice 
+	+ 0.001 * Crop_Type=Tomato,Maize,Sugarcane,Rice 
+	- 0.0006 * Crop_Type=Maize,Sugarcane,Rice 
+	+ 0.0373 * Crop_Type=Sugarcane,Rice 
+	+ 0.001 * Crop_Type=Rice 
+	+ 0.0172 * Growth_Stage=Late-season,Development,Mid-season 
+	+ 0.0009 * Growth_Stage=Development,Mid-season 
+	+ 0.1228 * Growth_Stage=Mid-season 
+	+ 0.012 * Temperature_C 
+	- 0.0004 * Humidity_pct 
+	- 0.0326 * Rainfall_mm_day 
+	+ 0.032 * Wind_Speed_m_s 
+	+ 0.038 * Soil_Type=Silty,Loamy,Sandy 
+	+ 0.0133 * Soil_Type=Loamy,Sandy 
+	+ 0.0189 * Soil_Type=Sandy 
+	- 0.0019 * Soil_Moisture_pct 
+	- 0.0005 * Phosphorus_mg_kg 
+	- 0.0002 * Potassium_mg_kg 
+	+ 0.0449
+
+LM num: 5
+Water_Requirement_mm_day = 
+	0.0016 * Crop_Type=Wheat,Potato,Cotton,Tomato,Maize,Sugarcane,Rice 
+	+ 0.1129 * Crop_Type=Potato,Cotton,Tomato,Maize,Sugarcane,Rice 
+	+ 0.026 * Crop_Type=Cotton,Tomato,Maize,Sugarcane,Rice 
+	+ 0.001 * Crop_Type=Tomato,Maize,Sugarcane,Rice 
+	- 0.0006 * Crop_Type=Maize,Sugarcane,Rice 
+	+ 0.1579 * Crop_Type=Sugarcane,Rice 
+	+ 0.001 * Crop_Type=Rice 
+	+ 0.0172 * Growth_Stage=Late-season,Development,Mid-season 
+	+ 0.0009 * Growth_Stage=Development,Mid-season 
+	+ 0.1449 * Growth_Stage=Mid-season 
+	+ 0.0072 * Temperature_C 
+	- 0.0005 * Humidity_pct 
+	- 0.0457 * Rainfall_mm_day 
+	+ 0.0137 * Wind_Speed_m_s 
+	+ 0.0055 * Soil_Type=Silty,Loamy,Sandy 
+	+ 0.0133 * Soil_Type=Loamy,Sandy 
+	+ 0.0189 * Soil_Type=Sandy 
+	- 0.0074 * Soil_Moisture_pct 
+	- 0.0005 * Phosphorus_mg_kg 
+	- 0.0002 * Potassium_mg_kg 
+	+ 0.4489
+
+LM num: 6
+Water_Requirement_mm_day = 
+	0.0016 * Crop_Type=Wheat,Potato,Cotton,Tomato,Maize,Sugarcane,Rice 
+	+ 0.0085 * Crop_Type=Potato,Cotton,Tomato,Maize,Sugarcane,Rice 
+	+ 0.0171 * Crop_Type=Cotton,Tomato,Maize,Sugarcane,Rice 
+	- 0.0122 * Crop_Type=Tomato,Maize,Sugarcane,Rice 
+	- 0.0006 * Crop_Type=Maize,Sugarcane,Rice 
+	+ 0.0365 * Crop_Type=Sugarcane,Rice 
+	+ 0.001 * Crop_Type=Rice 
+	+ 0.0172 * Growth_Stage=Late-season,Development,Mid-season 
+	+ 0.0009 * Growth_Stage=Development,Mid-season 
+	+ 0.0447 * Growth_Stage=Mid-season 
+	+ 0.0063 * Temperature_C 
+	- 0.0003 * Humidity_pct 
+	- 0.01 * Rainfall_mm_day 
+	+ 0.0213 * Wind_Speed_m_s 
+	+ 0.0007 * Soil_Type=Silty,Loamy,Sandy 
+	+ 0.0196 * Soil_Type=Loamy,Sandy 
+	+ 0.0189 * Soil_Type=Sandy 
+	- 0.0026 * Soil_Moisture_pct 
+	- 0.0017 * Phosphorus_mg_kg 
+	+ 0.221
+
+LM num: 7
+Water_Requirement_mm_day = 
+	0.0016 * Crop_Type=Wheat,Potato,Cotton,Tomato,Maize,Sugarcane,Rice 
+	+ 0.0085 * Crop_Type=Potato,Cotton,Tomato,Maize,Sugarcane,Rice 
+	+ 0.0171 * Crop_Type=Cotton,Tomato,Maize,Sugarcane,Rice 
+	- 0.0257 * Crop_Type=Tomato,Maize,Sugarcane,Rice 
+	- 0.0006 * Crop_Type=Maize,Sugarcane,Rice 
+	+ 0.0365 * Crop_Type=Sugarcane,Rice 
+	+ 0.001 * Crop_Type=Rice 
+	+ 0.0172 * Growth_Stage=Late-season,Development,Mid-season 
+	+ 0.0009 * Growth_Stage=Development,Mid-season 
+	+ 0.0447 * Growth_Stage=Mid-season 
+	+ 0.0063 * Temperature_C 
+	- 0.0003 * Humidity_pct 
+	- 0.01 * Rainfall_mm_day 
+	+ 0.028 * Wind_Speed_m_s 
+	+ 0.0007 * Soil_Type=Silty,Loamy,Sandy 
+	+ 0.0453 * Soil_Type=Loamy,Sandy 
+	+ 0.0189 * Soil_Type=Sandy 
+	- 0.0021 * Soil_Moisture_pct 
+	- 0.0012 * Phosphorus_mg_kg 
+	+ 0.1341
+
+LM num: 8
+Water_Requirement_mm_day = 
+	0.0016 * Crop_Type=Wheat,Potato,Cotton,Tomato,Maize,Sugarcane,Rice 
+	+ 0.083 * Crop_Type=Potato,Cotton,Tomato,Maize,Sugarcane,Rice 
+	+ 0.0051 * Crop_Type=Cotton,Tomato,Maize,Sugarcane,Rice 
+	+ 0.001 * Crop_Type=Tomato,Maize,Sugarcane,Rice 
+	+ 0.0934 * Crop_Type=Maize,Sugarcane,Rice 
+	+ 0.031 * Crop_Type=Sugarcane,Rice 
+	+ 0.001 * Crop_Type=Rice 
+	+ 0.0172 * Growth_Stage=Late-season,Development,Mid-season 
+	+ 0.0009 * Growth_Stage=Development,Mid-season 
+	+ 0.2008 * Growth_Stage=Mid-season 
+	+ 0.0239 * Temperature_C 
+	- 0.0028 * Humidity_pct 
+	- 0.0534 * Rainfall_mm_day 
+	+ 0.0624 * Wind_Speed_m_s 
+	+ 0.0007 * Soil_Type=Silty,Loamy,Sandy 
+	+ 0.014 * Soil_Type=Loamy,Sandy 
+	+ 0.0291 * Soil_Type=Sandy 
+	- 0.0073 * Soil_Moisture_pct 
+	- 0.0005 * Phosphorus_mg_kg 
+	- 0.002 * Potassium_mg_kg 
+	+ 0.2682
+
+LM num: 9
+Water_Requirement_mm_day = 
+	0.165 * Crop_Type=Wheat,Potato,Cotton,Tomato,Maize,Sugarcane,Rice 
+	+ 0.0009 * Crop_Type=Potato,Cotton,Tomato,Maize,Sugarcane,Rice 
+	+ 0.0038 * Crop_Type=Cotton,Tomato,Maize,Sugarcane,Rice 
+	+ 0.0963 * Crop_Type=Tomato,Maize,Sugarcane,Rice 
+	- 0.0633 * Crop_Type=Maize,Sugarcane,Rice 
+	+ 0.124 * Crop_Type=Sugarcane,Rice 
+	+ 0.0598 * Crop_Type=Rice 
+	+ 0.1737 * Growth_Stage=Late-season,Development,Mid-season 
+	+ 0.0036 * Growth_Stage=Development,Mid-season 
+	+ 0.0161 * Growth_Stage=Mid-season 
+	+ 0.0175 * Temperature_C 
+	- 0.0015 * Humidity_pct 
+	- 0.0532 * Rainfall_mm_day 
+	+ 0.0252 * Wind_Speed_m_s 
+	+ 0.0008 * Soil_Type=Silty,Loamy,Sandy 
+	+ 0.0344 * Soil_Type=Loamy,Sandy 
+	+ 0.1453 * Soil_Type=Sandy 
+	- 0.0068 * Soil_Moisture_pct 
+	- 0 * Phosphorus_mg_kg 
+	- 0.0021
+
+LM num: 10
+Water_Requirement_mm_day = 
+	0.1556 * Crop_Type=Wheat,Potato,Cotton,Tomato,Maize,Sugarcane,Rice 
+	+ 0.0478 * Crop_Type=Potato,Cotton,Tomato,Maize,Sugarcane,Rice 
+	+ 0.0801 * Crop_Type=Cotton,Tomato,Maize,Sugarcane,Rice 
+	+ 0.0518 * Crop_Type=Tomato,Maize,Sugarcane,Rice 
+	- 0.0669 * Crop_Type=Maize,Sugarcane,Rice 
+	+ 0.1484 * Crop_Type=Sugarcane,Rice 
+	+ 0.0944 * Crop_Type=Rice 
+	+ 0.0133 * Growth_Stage=Late-season,Development,Mid-season 
+	+ 0.0036 * Growth_Stage=Development,Mid-season 
+	+ 0.2292 * Growth_Stage=Mid-season 
+	+ 0.0288 * Temperature_C 
+	- 0.0033 * Humidity_pct 
+	- 0.0702 * Rainfall_mm_day 
+	+ 0.0471 * Wind_Speed_m_s 
+	+ 0.0008 * Soil_Type=Silty,Loamy,Sandy 
+	+ 0.0484 * Soil_Type=Loamy,Sandy 
+	+ 0.2417 * Soil_Type=Sandy 
+	- 0.0114 * Soil_Moisture_pct 
+	- 0 * Phosphorus_mg_kg 
+	- 0.0221
+
+Number of Rules : 10
+
+Time taken to build model: 0.23 seconds
+
+=== Cross-validation ===
+=== Summary ===
+
+Correlation coefficient                  0.901 
+Mean absolute error                      0.1116
+Root mean squared error                  0.1429
+Relative absolute error                 42.6996 %
+Root relative squared error             43.3552 %
+Total Number of Instances             1200     
+

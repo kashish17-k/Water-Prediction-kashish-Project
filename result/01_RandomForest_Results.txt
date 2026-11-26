@@ -1,0 +1,41 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.RandomForest -P 100 -I 100 -num-slots 1 -K 0 -M 1.0 -V 0.001 -S 1
+Relation:     water_requirement_prediction-weka.filters.unsupervised.attribute.Remove-R1
+Instances:    1200
+Attributes:   13
+              Crop_Type
+              Growth_Stage
+              Temperature_C
+              Humidity_pct
+              Rainfall_mm_day
+              Wind_Speed_m_s
+              Soil_Type
+              Soil_Moisture_pct
+              Soil_pH
+              Nitrogen_mg_kg
+              Phosphorus_mg_kg
+              Potassium_mg_kg
+              Water_Requirement_mm_day
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+RandomForest
+
+Bagging with 100 iterations and base learner
+
+weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1 -do-not-check-capabilities
+
+Time taken to build model: 0.25 seconds
+
+=== Cross-validation ===
+=== Summary ===
+
+Correlation coefficient                  0.8782
+Mean absolute error                      0.143 
+Root mean squared error                  0.1818
+Relative absolute error                 54.6795 %
+Root relative squared error             55.1674 %
+Total Number of Instances             1200     
+

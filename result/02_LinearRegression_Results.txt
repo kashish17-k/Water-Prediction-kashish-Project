@@ -1,0 +1,61 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.functions.LinearRegression -S 0 -R 1.0E-8 -num-decimal-places 4
+Relation:     water_requirement_prediction-weka.filters.unsupervised.attribute.Remove-R1
+Instances:    1200
+Attributes:   13
+              Crop_Type
+              Growth_Stage
+              Temperature_C
+              Humidity_pct
+              Rainfall_mm_day
+              Wind_Speed_m_s
+              Soil_Type
+              Soil_Moisture_pct
+              Soil_pH
+              Nitrogen_mg_kg
+              Phosphorus_mg_kg
+              Potassium_mg_kg
+              Water_Requirement_mm_day
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+
+Linear Regression Model
+
+Water_Requirement_mm_day =
+
+      0.0725 * Crop_Type=Wheat,Potato,Cotton,Tomato,Maize,Sugarcane,Rice +
+      0.035  * Crop_Type=Potato,Cotton,Tomato,Maize,Sugarcane,Rice +
+      0.0355 * Crop_Type=Cotton,Tomato,Maize,Sugarcane,Rice +
+      0.0423 * Crop_Type=Tomato,Maize,Sugarcane,Rice +
+     -0.0285 * Crop_Type=Maize,Sugarcane,Rice +
+      0.1232 * Crop_Type=Sugarcane,Rice +
+      0.0424 * Crop_Type=Rice +
+      0.1614 * Growth_Stage=Late-season,Development,Mid-season +
+      0.0418 * Growth_Stage=Development,Mid-season +
+      0.1857 * Growth_Stage=Mid-season +
+      0.0237 * Temperature_C +
+     -0.0021 * Humidity_pct +
+     -0.048  * Rainfall_mm_day +
+      0.0364 * Wind_Speed_m_s +
+      0.0309 * Soil_Type=Silty,Loamy,Sandy +
+      0.0257 * Soil_Type=Loamy,Sandy +
+      0.1521 * Soil_Type=Sandy +
+     -0.0071 * Soil_Moisture_pct +
+     -0.0006 * Phosphorus_mg_kg +
+     -0.1339
+
+Time taken to build model: 0.01 seconds
+
+=== Cross-validation ===
+=== Summary ===
+
+Correlation coefficient                  0.88  
+Mean absolute error                      0.1205
+Root mean squared error                  0.1563
+Relative absolute error                 46.1067 %
+Root relative squared error             47.423  %
+Total Number of Instances             1200     
+
